@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Simple GO webpage</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/web/html/main.css'>
+</head>
+
+<body>
+    <section class="container">
+        <ul class="heroes">
+            {{ range. }}
+            <h1>{{ .LocalizedName }} - {{ .ID }}</h1>
+            <h3>Primary Attribute - {{ .PrimaryAttr }}</h3>
+            <h3>Attack Type - {{ .AttackType }}</h3>
+            <ul class="roles">
+                <h3>Roles:</h3>
+                {{ range.Roles }}
+                <li>{{ . }}</li>
+                {{ end }}
+            </ul>
+            {{ end }}
+        </ul>
+    </section>
+</body>
+
+</html>
